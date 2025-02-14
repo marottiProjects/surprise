@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Surprise</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffe6e6;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        #content {
+            display: none;
+            opacity: 0;
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+            transform: scale(0.8);
+        }
+        img {
+            width: 150px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        h2 {
+            color: #d63384;
+            font-size: 24px;
+        }
+        #message {
+            color: #d63384;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body onclick="showContent()">
+    <div id="message">Tap the screen</div>
+    <div id="content">
+        <img src="tulip.jpg" alt="Tulip">
+        <h2>Happy Valentine's Day!</h2>
+    </div>
+    <script>
+        function showContent() {
+            document.getElementById('message').style.display = 'none';
+            let content = document.getElementById('content');
+            content.style.display = 'block';
+            setTimeout(() => {
+                content.style.opacity = '1';
+                content.style.transform = 'scale(1)';
+            }, 50);
+        }
+    </script>
+</body>
+</html>
